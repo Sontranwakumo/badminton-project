@@ -23,7 +23,7 @@
     "migrate:gen": "npx ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate -d ./typeorm.config.ts ",
     "db:migrate:up": "npm run typeorm -- -d ./typeorm.config.ts migration:run",
     "db:migrate:down": "npm run typeorm -- -d ./typeorm.config.ts migration:revert",
-    "init_and_run":"npm install && npx ts-node initialize.dev.ts && npm run start"
+    "init_and_run":"npm install && npx ts-node initialize.dev.ts && npm run db:migrate:up && npm run start"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
