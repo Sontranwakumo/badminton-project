@@ -1,4 +1,4 @@
-import { UserRole } from "src/common/enum";
+import { CourtStatus, UserRole } from "src/common/enum";
 import { Column, Entity, Index, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Branch } from "./branch.entity";
 import {Comment} from "./comment.entity";
@@ -20,11 +20,12 @@ export class CourtInfo {
     @JoinColumn({name:'id_branch'})
     branch: Branch
 
-    @Column({default:true})
-    is_active: boolean;
-
-    @Column({default:false})
-    is_locked: boolean;
+    @Column({
+        type: 'enum',
+        enum: CourtStatus,
+        default: CourtStatus.ACTIVE
+    })
+    status: CourtStatus
 
     @OneToMany(()=>Comment,comment=>comment.court)
     comments: Comment[]

@@ -15,3 +15,9 @@ export enum PaymentStatus{
     SENT = 'sent',
     REFUNDED = 'refunded'
 }
+
+export enum CourtStatus{
+    LOCKED = 'locked',
+    ACTIVE = 'active',
+    DEACTIVATE = 'deactivate'
+}

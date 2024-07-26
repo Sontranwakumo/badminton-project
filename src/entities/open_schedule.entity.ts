@@ -10,12 +10,11 @@ export class OpenSchedule {
   @JoinColumn({ name: 'branch_id' })
   branch: Branch;
 
-  @Column('time')
+  @Column('time',{nullable:true})
   start_time: string;
 
-  @Column('time')
+  @Column('time',{nullable:true})
   end_time: string;
-
   @Column()
   day_of_week: number;
 }
