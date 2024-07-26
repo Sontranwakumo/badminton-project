@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 import { User } from './user.entity'; // Đường dẫn tùy thuộc vào vị trí của file entity User
 import { CourtInfo } from './courtinfo.entity'; // Đường dẫn tùy thuộc vào vị trí của file entity CourtInfo
 import { count } from 'console';
@@ -12,7 +18,7 @@ export class Comment {
   @JoinColumn({ name: 'sender_id' })
   sender: User;
 
-  @ManyToOne(() => CourtInfo,court=>court.comments)
+  @ManyToOne(() => CourtInfo, (court) => court.comments)
   @JoinColumn({ name: 'court_id' })
   court: CourtInfo;
 
