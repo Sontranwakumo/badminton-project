@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { OrderForm } from './orderform.entity';
-import { UserRole } from 'src/commons/enums/UserRole.enum';
+import { UserRole } from '../../src/commons/enums/UserRole.enum';
 
 @Entity()
 export class User {

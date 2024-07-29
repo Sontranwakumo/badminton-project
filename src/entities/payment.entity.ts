@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { PaymentDetail } from './payment_detail.entity';
-import { PaymentStatus } from 'src/commons/enums/PaymentStatus.enum';
+import { PaymentStatus } from '../../src/commons/enums/PaymentStatus.enum';
 
 @Entity()
 export class Payment {

@@ -1,5 +1,6 @@
-import { CourtStatus } from 'src/commons/enums/CourtStatus.enum';
+import { CourtStatus } from '../../src/commons/enums/CourtStatus.enum';
 import {
+  BaseEntity,
   Column,
   Entity,
   Index,
@@ -11,9 +12,9 @@ import {
 import { Branch } from './branch.entity';
 import { Comment } from './comment.entity';
 @Entity()
-export class CourtInfo {
+export class CourtInfo extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id?: string;
 
   @Column()
   name_of_court: string;
@@ -26,7 +27,7 @@ export class CourtInfo {
 
   @ManyToOne(() => Branch, (branch) => branch.courts)
   @JoinColumn({ name: 'id_branch' })
-  branch: Branch;
+  branch?: Branch;
 
   @Column({
     type: 'enum',
