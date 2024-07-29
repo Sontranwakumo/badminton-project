@@ -12,8 +12,8 @@ import { ConfigService } from '@nestjs/config';
         username: configs.get('POSTGRES_USER') || 'postgres',
         database: configs.get('POSTGRES_DB') || 'testdb',
         password: configs.get('POSTGRES_PASSWORD') || 'dhruv',
-        // autoLoadEntities:true,
-        // synchronize:configs.get("SYNCHRONIZE")||true
+        autoLoadEntities:true,
+        synchronize:configs.get("SYNCHRONIZE")||true
       }),
       inject: [ConfigService],
     }),
