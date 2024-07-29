@@ -1,5 +1,6 @@
-import { UserRole } from 'src/commons/enums/UserRole.enum';
+import { UserRole } from '../../src/commons/enums/UserRole.enum';
 import {
+  BaseEntity,
   Column,
   Entity,
   JoinColumn,
@@ -14,7 +15,7 @@ import { OpenSchedule } from './open_schedule.entity';
 import { OffSchedules } from './off_schedule.entity';
 
 @Entity()
-export class Branch {
+export class Branch extends BaseEntity{
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

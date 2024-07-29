@@ -11,7 +11,7 @@ import { User } from './user.entity';
 import { CourtInfo } from './courtinfo.entity';
 import { Payment } from './payment.entity';
 import { TimeSlot } from './timeslot.entity';
-import { BookStatus } from 'src/commons/enums/BookStatus.enum';
+import { BookStatus } from '../../src/commons/enums/BookStatus.enum';
 
 @Entity()
 export class OrderForm {
